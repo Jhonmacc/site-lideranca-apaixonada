@@ -137,6 +137,7 @@
     @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
 
     .btn-cta {
+      position: relative; z-index: 5;
       display: inline-block;
       background: linear-gradient(135deg, var(--gold), #b5792a);
       color: #0a0608;
@@ -163,16 +164,6 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    .scroll-down {
-      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
-      width: 44px; height: 44px;
-      border: 1px solid rgba(201,150,44,0.35);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      animation: bounce 2.5s infinite; cursor: pointer; z-index: 2;
-      transition: border-color 0.3s;
-    }
-    .scroll-down:hover { border-color: var(--gold); }
-    .scroll-down svg { width: 20px; height: 20px; fill: rgba(201,150,44,0.7); }
     @keyframes bounce {
       0%,100% { transform: translateX(-50%) translateY(0); }
       50% { transform: translateX(-50%) translateY(8px); }
@@ -585,7 +576,8 @@
       .speaker-divider, .speaker-card.reverse .speaker-divider { margin: 0 auto 1rem; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
       .temas-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
-      .btn-cta { font-size: 0.85rem; padding: 0.9rem 2rem; }
+      .btn-cta {
+      position: relative; z-index: 5; font-size: 0.85rem; padding: 0.9rem 2rem; }
     }
   </style>
 </head>
@@ -605,9 +597,6 @@
       <br>
       <a href="{{FORM_URL}}" class="btn-cta">Faça sua inscrição</a>
     </div>
-    <a href="#palestrantes" class="scroll-down" aria-label="Rolar para baixo">
-      <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-    </a>
   </section>
 
   <!-- Marquee -->
